@@ -1,6 +1,6 @@
 class CommoditiesController < ApplicationController
     def index
         commodities = Commodity.all
-        render json: commodities,include: bidders
+        render json: commodities,includes: bidders
     end
 end
