@@ -3,7 +3,7 @@ class CreateCommodities < ActiveRecord::Migration[6.1]
     create_table :commodities do |t|
       t.string :name
       t.string :category
-      t.interger :bid_price
+      t.integer :bid_price
       t.string :image_url
       t.string :description
       t.string :email_of_auctioneir
