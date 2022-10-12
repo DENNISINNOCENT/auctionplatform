@@ -8,7 +8,7 @@ class CommoditiesController < ApplicationController
         render json: commodity,status: :created
     end
     def show
-        commodity = find_by
+        commodity = find_commodity
         render json: commodity
 
     end
@@ -23,7 +23,7 @@ class CommoditiesController < ApplicationController
     def commodity_params
         params.permit(:name,:category,:bid_price,:image_url,:description,:email_of_auctioneir)
     end
-    def find_by
+    def find_commodity
         Commodity.find(params[:id])
     end
 end

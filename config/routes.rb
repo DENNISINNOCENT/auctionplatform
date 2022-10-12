@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :commodities, only:[:index,:create,:destroy,:show]
-  resources :bidders, only:[:index]
+  resources :bidders, only:[:index,:create,:update,:destroy]
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
