@@ -1,3 +1,3 @@
 class BiddersSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :name,:bidding_price
 end
