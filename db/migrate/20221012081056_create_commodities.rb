@@ -6,6 +6,7 @@ class CreateCommodities < ActiveRecord::Migration[6.1]
       t.interger :bid_price
       t.string :image_url
       t.string :description
+      t.string :email_of_auctioneir
 
       t.timestamps
     end
