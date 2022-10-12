@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :commodities, only:[:index,:create]
+  resources :commodities, only:[:index,:create,:destroy,:show]
   resources :bidders, only:[:index]
   
   # Routing logic: fallback requests for React Router.
