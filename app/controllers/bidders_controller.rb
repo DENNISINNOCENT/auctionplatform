@@ -10,8 +10,8 @@ class BiddersController < ApplicationController
 
     def update
         bidder =find_bidder
-        bidder.update(bidder_params)
-        render json: bidder,status: :bidder
+        bidder.update!(bidder_params)
+        render json: bidder,status: :created
     end
     def destroy
     bidder = find_bidder
@@ -19,7 +19,7 @@ class BiddersController < ApplicationController
     head :no_content
     end
     def show
-        bidder =find_bidder
+        bidder = find_bidder
         render json: bidder
     end
     private
