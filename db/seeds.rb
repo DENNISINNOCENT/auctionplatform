@@ -10,3 +10,5 @@ DoorCooling keeps fridge cold even after opening the door+™,
 Energy saving Inverter Linear Compressor,
 HygieneFresh for the highest hygiene levels+™,
 Smart ThinQ™ delivers smart control system",email_of_auctioneir:"mutindahdennis@gmail.com")
+
+Bidder.create(name:"Dennis Mwendwa",email:"dennism@kabarak.ac.ke",bidding_price:"$100",commodity_id:1,comment_id:1)
