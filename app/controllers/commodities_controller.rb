@@ -1,14 +1,14 @@
 class CommoditiesController < ApplicationController
     def index
         commodities = Commodity.all
-        render json: commodities,include: :bidders
+        render json: commodities
     end
     def create
         commodity = Commodity.create!(commodity_params)
         render json: commodity,status: :created
     end
     def show
-        commodity =find_by
+        commodity = find_by
         render json: commodity
 
     end
