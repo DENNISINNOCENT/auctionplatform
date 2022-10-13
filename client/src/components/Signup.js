@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 function SignUp({ setUser }) {
-  const [firstname, setFirstname] =useState("")
-  const [lastname, setLastname] =useState("")
-  const [email, setEmail] =useState("")    
+  const [firstname, setFirstname] =useState("");
+  const [lastname, setLastname] =useState("");
+  const [middlename, setMiddlename] = useState("");
+  const [email, setEmail] =useState("");    
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -17,6 +18,7 @@ function SignUp({ setUser }) {
       },
       body: JSON.stringify({
         firstname,
+        middlename,
         lastname,
         email,
         username,
@@ -41,6 +43,14 @@ function SignUp({ setUser }) {
           autoComplete="off"
           value={firstname}
           onChange={(e) => setFirstname(e.target.value)}
+        />
+        <label htmlFor="middlename">Middlename</label>
+        <input
+          type="text"
+          id="lastname"
+          autoComplete="off"
+          value={middlename}
+          onChange={(e) => setMiddlename(e.target.value)}
         />
         <label htmlFor="lastname">Lastname</label>
         <input

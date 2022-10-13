@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+// import React, { useEffect, useState } from "react";
+// import { Routes, Route } from "react-router-dom";
 import SignUp from "./components/Signup";
 import Login from "./components/Login";
-import NavBar from "./components/Navbar";
+// import NavBar from "./components/Navbar";
 import Home from "./components/Home";
-
+import Header from "./components/Header";
 function App() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      {/* <NavBar user={user} setUser={setUser} />
       <main>
         {user ? (
           <Routes>
@@ -40,7 +40,11 @@ function App() {
             </Route>
           </Routes>
         )}
-      </main>
+      </main> */}
+      <Home/>
+      <SignUp/>
+      <Login/>
+      <Header/>
     </>
   );
 }

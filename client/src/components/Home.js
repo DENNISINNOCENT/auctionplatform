@@ -19,6 +19,7 @@ function Home() {
           <li commodity key={commodity.id}> 
             
             <small>
+              {commodity.image_url}
               {commodity.name} 
             </small>
             <p>{commodity.description}</p>
