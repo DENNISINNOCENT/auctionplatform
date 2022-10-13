@@ -40,7 +40,7 @@ function SignUp({ setUser }) {
           id="firstname"
           autoComplete="off"
           value={firstname}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setFirstname(e.target.value)}
         />
         <label htmlFor="lastname">Lastname</label>
         <input
@@ -48,7 +48,7 @@ function SignUp({ setUser }) {
           id="lastname"
           autoComplete="off"
           value={lastname}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setLastname(e.target.value)}
         />
         <label htmlFor="email">Email</label>
         <input
@@ -56,7 +56,7 @@ function SignUp({ setUser }) {
           id="email"
           autoComplete="off"
           value={email}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="username">Username</label>
         <input
