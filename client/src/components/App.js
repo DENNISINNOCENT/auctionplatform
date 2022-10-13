@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Router, Route } from "react-router-dom";
-import NavBar from "./NavBar";
-import Login from "../pages/Login";
+// import React, { useEffect, useState } from "react";
+// import { Router, Route } from "react-router-dom";
+// import NavBar from "./NavBar";
+// import Login from "../pages/Login";
 import CommodityCard from "../pages/CommodityCard";
-import CommodityForm from "../pages/CommodityForm";
+
+import CommodityList from "../pages/CommodityList";
 
 function App() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+  // if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      {/* <NavBar user={user} setUser={setUser} />
       <main>
         <Router>
           <Route path="/new">
@@ -31,7 +32,10 @@ function App() {
             <CommodityCard />
           </Route>
         </Router>
-      </main>
+      </main> */}
+      <CommodityCard/>
+      
+      <CommodityList/>
     </>
   );
 }
