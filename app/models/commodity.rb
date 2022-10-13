@@ -3,7 +3,7 @@ class Commodity < ApplicationRecord
     validates :name,presence: true
     validates :category,presence:true
     validates :image_url,presence:true
-    validates :email_of_auctioneir,presence:true,uniqueness: true
+    validates :email_of_auctioneir,presence:true
     validates :bid_price,presence:true
 
     validates :category,inclusion: {in: CATEGORIES}
