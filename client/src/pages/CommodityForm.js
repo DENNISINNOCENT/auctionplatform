@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Button,  Input, FormField, Label} from "../styles";
 
 function CommodityForm() {
   const [formData, setFormData] = useState({
@@ -40,38 +40,38 @@ function CommodityForm() {
 
   return (
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input
+        <FormField>
+          <Label htmlFor="name">Name</Label>
+          <Input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="category">Category</label>
-          <input
+        </FormField>
+        <FormField>
+          <Label htmlFor="category">Category</Label>
+          <Input
             type="text"
             name="category"
             value={formData.category}
             onChange={handleChange}
           />
-        </div>
+        </FormField>
         
-        <div>
-          <label htmlFor="bid_price">Bid Price</label>
-          <input
+        <FormField>
+          <Label htmlFor="bid_price">Bid Price</Label>
+          <Input
             type="integer"
             name="bid_price"
             value={formData.bid_price}
             onChange={handleChange}
             placeholder="$"
           />
-        </div>
+        </FormField>
         <div>
-          <label htmlFor="image_url">Image</label>
-          <input
+          <Label htmlFor="image_url">Image</Label>
+          <Input
             type="text"
             name="image_url"
             value={formData.image_url}
@@ -79,27 +79,28 @@ function CommodityForm() {
             
           />
         </div>
-        <div>
-          <label htmlFor="email_of_auctioneir">Your Email</label>
-          <input
+        <FormField>
+          <Label htmlFor="email_of_auctioneir">Your Email</Label>
+          <Input
             type ="text"
             name = "email_of_auctioneir"
             value={formData.email_of_auctioneir}
             onChange={handleChange}
           />
-        </div>
-        <div>
+        </FormField>
+        <FormField>
+
           <label htmlFor="description">Description</label>
           <textarea
             name="description"
             value={formData.description}
             onChange={handleChange}
           />
-        </div>
+        </FormField>
         
         
         
-        <button type="submit">Add Commodity</button>
+        <Button type="submit">Add Commodity</Button>
       </form>
    
   );

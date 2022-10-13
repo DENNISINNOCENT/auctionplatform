@@ -46,7 +46,7 @@ function SignUpForm({ onLogin }) {
     <form onSubmit={handleSubmit}>
       <FormField>
       <Label htmlFor="firstname">Firstname</Label>
-        <input
+        <Input
           type="text"
           id="firstname"
           autoComplete="off"
@@ -56,7 +56,7 @@ function SignUpForm({ onLogin }) {
         </FormField>
         <FormField>
         <Label htmlFor="middlename">Middlename</Label>
-        <input
+        <Input
           type="text"
           id="lastname"
           autoComplete="off"
@@ -66,7 +66,7 @@ function SignUpForm({ onLogin }) {
         </FormField>
         <FormField>
         <Label htmlFor="lastname">Lastname</Label>
-        <input
+        <Input
           type="text"
           id="lastname"
           autoComplete="off"
@@ -76,7 +76,7 @@ function SignUpForm({ onLogin }) {
         </FormField>
         <FormField>
         <Label htmlFor="email">Email</Label>
-        <input
+        <Input
           type="text"
           id="email"
           autoComplete="off"

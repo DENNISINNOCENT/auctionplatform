@@ -29,7 +29,7 @@ function BidderForm({ onLogin }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-         history.push("/");
+         
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -37,8 +37,7 @@ function BidderForm({ onLogin }) {
   }
 
   return (
-    <Wrapper>
-      <WrapperChild>
+    <>
         <h2>Place Bid</h2>
         <form onSubmit={handleSubmit}>
           <FormField>
@@ -66,11 +65,12 @@ function BidderForm({ onLogin }) {
               id="biddig_price"
               value={bidding_price}
               onChange={(e) => setBiddingPrice(e.target.value)}
+              placeholder ="$"
             />
           </FormField>
           <FormField>
             <Button color="primary" type="submit">
-              {isLoading ? "Loading..." : "Submit Recipe"}
+              {isLoading ? "Loading..." : "Submit Bid"}
             </Button>
           </FormField>
           <FormField>
@@ -79,22 +79,10 @@ function BidderForm({ onLogin }) {
             ))}
           </FormField>
         </form>
-      </WrapperChild>
-     
-    </Wrapper>
+      </>
   );
 }
 
-const Wrapper = styled.section`
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 16px;
-  display: flex;
-  gap: 24px;
-`;
 
-const WrapperChild = styled.div`
-  flex: 1;
-`;
 export default BidderForm;
 
