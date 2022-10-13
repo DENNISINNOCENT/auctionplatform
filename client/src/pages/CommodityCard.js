@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button,  FormField, } from "../styles";
 function CommodityCard({image_url,name,category,description,bid_price}) {
  
   
@@ -17,6 +18,9 @@ function CommodityCard({image_url,name,category,description,bid_price}) {
         <p>{description}</p>
         <h1>Bidding Price ${bid_price}</h1>
       </Detail>
+      <FormField>
+        <Button type="submit">Place Bid</Button>
+      </FormField>
     </Wrapper>
   );
 }
