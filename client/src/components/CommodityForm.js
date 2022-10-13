@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import styled from "styled-components";
+
 
 function CommodityForm() {
   const [formData, setFormData] = useState({
@@ -8,7 +8,7 @@ function CommodityForm() {
     bid_price: "",
     image_url: "",
     description: "",
-    email_of_actioneir:"",
+    email_of_auctioneir: "",
     
     
   });
@@ -29,98 +29,81 @@ function CommodityForm() {
   }
 
   function handleChange(e) {
+    const name =e.target.name
+    const value =e.target.value
       
     setFormData({
       ...formData,
-      [e.target.id]: value,
+      [name]: value,
     });
   }
 
   return (
-    <Wrapper>
       <form onSubmit={handleSubmit}>
-        <FormGroup>
+        <div>
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            id="name"
+            name="name"
             value={formData.name}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="category">Category</label>
           <input
             type="text"
-            id="category"
+            name="category"
             value={formData.category}
             onChange={handleChange}
           />
-        </FormGroup>
+        </div>
         
-        <FormGroup>
+        <div>
           <label htmlFor="bid_price">Bid Price</label>
           <input
             type="integer"
-            id="bis_price"
+            name="bid_price"
             value={formData.bid_price}
             onChange={handleChange}
+            placeholder="$"
           />
-        </FormGroup>
-        <FormGroup>
-          <label htmlFor="image_url">Poster</label>
+        </div>
+        <div>
+          <label htmlFor="image_url">Image</label>
           <input
             type="text"
-            id="poster_url"
-            value={formData.poster_url}
+            name="image_url"
+            value={formData.image_url}
+            onChange={handleChange}
+            
+          />
+        </div>
+        <div>
+          <label htmlFor="email_of_auctioneir">Your Email</label>
+          <input
+            type ="text"
+            name = "email_of_auctioneir"
+            value={formData.email_of_auctioneir}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="description">Description</label>
           <textarea
-            id="description"
+            name="description"
             value={formData.description}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
-          <label htmlFor="email_of_actioneir">Description</label>
-          <textarea
-            id="email_of_actioneir"
-            value={formData.email_of_actioneir}
-            onChange={handleChange}
-          />
-        </FormGroup>
+        </div>
         
         
-        <SubmitButton type="submit">Add Commodity</SubmitButton>
+        
+        <button type="submit">Add Commodity</button>
       </form>
-    </Wrapper>
+   
   );
 }
 
-const Wrapper = styled.section`
-  max-width: 500px;
-  margin: 32px auto;
-  padding: 32px;
-`;
-
-const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-`;
-
-const SubmitButton = styled.button`
-  background: blue;
-  color: yellow;
-  font-weight: bold;
-  font-family: inherit;
-  font-size: 1.2rem;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-`;
 
 export default CommodityForm;
