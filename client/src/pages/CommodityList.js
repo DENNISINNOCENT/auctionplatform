@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CommodityCard from './CommodityCard'
+import CommodityCard from '../CommodityCard'
 
 function CommodityList(props) {
   const [commodities, setCommodities] = useState([]);

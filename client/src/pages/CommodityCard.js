@@ -6,7 +6,7 @@ function CommodityCard({name}) {
     <>
     
       <div>
-       <h1>{name}</h1>
+       <h1>Hi</h1>
       </div> 
     </>
   );

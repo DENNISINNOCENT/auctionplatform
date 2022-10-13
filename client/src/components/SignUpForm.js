@@ -1,16 +1,22 @@
 import React, { useState } from "react";
+import { Button, Error, Input, FormField, Label} from "../styles";
 
-function SignUp({ setUser }) {
+function SignUpForm({ onLogin }) {
   const [firstname, setFirstname] =useState("");
   const [lastname, setLastname] =useState("");
   const [middlename, setMiddlename] = useState("");
-  const [email, setEmail] =useState("");    
+  const [email, setEmail] =useState(""); 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setErrors([]);
+    setIsLoading(true);
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -24,19 +30,22 @@ function SignUp({ setUser }) {
         username,
         password,
         password_confirmation: passwordConfirmation,
+        
       }),
     }).then((r) => {
+      setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => setErrors(err.errors));
       }
     });
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
-        <label htmlFor="firstname">Firstname</label>
+    <form onSubmit={handleSubmit}>
+      <FormField>
+      <Label htmlFor="firstname">Firstname</Label>
         <input
           type="text"
           id="firstname"
@@ -44,7 +53,9 @@ function SignUp({ setUser }) {
           value={firstname}
           onChange={(e) => setFirstname(e.target.value)}
         />
-        <label htmlFor="middlename">Middlename</label>
+        </FormField>
+        <FormField>
+        <Label htmlFor="middlename">Middlename</Label>
         <input
           type="text"
           id="lastname"
@@ -52,7 +63,9 @@ function SignUp({ setUser }) {
           value={middlename}
           onChange={(e) => setMiddlename(e.target.value)}
         />
-        <label htmlFor="lastname">Lastname</label>
+        </FormField>
+        <FormField>
+        <Label htmlFor="lastname">Lastname</Label>
         <input
           type="text"
           id="lastname"
@@ -60,7 +73,9 @@ function SignUp({ setUser }) {
           value={lastname}
           onChange={(e) => setLastname(e.target.value)}
         />
-        <label htmlFor="email">Email</label>
+        </FormField>
+        <FormField>
+        <Label htmlFor="email">Email</Label>
         <input
           type="text"
           id="email"
@@ -68,34 +83,49 @@ function SignUp({ setUser }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor="username">Username</label>
-        <input
+        </FormField>
+      <FormField>
+        <Label htmlFor="username">Username</Label>
+        <Input
           type="text"
           id="username"
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
-        <input
+      </FormField>
+      <FormField>
+        <Label htmlFor="password">Password</Label>
+        <Input
           type="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="password">Password Confirmation</label>
-        <input
+      </FormField>
+      <FormField>
+        <Label htmlFor="password">Password Confirmation</Label>
+        <Input
           type="password"
           id="password_confirmation"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+      </FormField>
+     
+      
+      <FormField>
+        <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
+      </FormField>
+      <FormField>
+        {errors.map((err) => (
+          <Error key={err}>{err}</Error>
+        ))}
+      </FormField>
+    </form>
   );
 }
 
-export default SignUp;
+export default SignUpForm;
