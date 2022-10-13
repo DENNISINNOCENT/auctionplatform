@@ -123,4 +123,4 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
-export default MovieForm;
+export default CommodityForm;
