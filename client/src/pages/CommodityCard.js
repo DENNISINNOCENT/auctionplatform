@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from 'react'
 import { Button,  FormField, } from "../styles";
 function CommodityCard({image_url,name,category,description,bid_price}) {
  
