@@ -5,6 +5,7 @@ function CommodityCard({image_url,name,category,description,bid_price}) {
  
   
   return (
+    <div className="commodityCard">
   <Wrapper>
       <Poster>
         <img src={image_url} alt={name } />
@@ -23,6 +24,7 @@ function CommodityCard({image_url,name,category,description,bid_price}) {
         <Button type="submit">Place Bid</Button>
       </FormField>
     </Wrapper>
+    </div>
   );
 }
 
@@ -43,6 +45,10 @@ const Detail = styled.div`
     line-height: 1.4;
   }
 `;
+
+
+
+
 const Wrapper = styled.article`
   display: flex;
   gap: 16px;
@@ -53,7 +59,7 @@ const Wrapper = styled.article`
 `;
 
 const Poster = styled.div`
-  flex: 0 0 200px;
+  flex: 0 0 150px;
 
   img {
     width: 100%;

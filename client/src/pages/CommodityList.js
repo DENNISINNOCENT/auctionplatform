@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import CategoryFilter from "./CategoryFilter";
 import CommodityCard from "./CommodityCard";
@@ -50,15 +51,16 @@ const Wrapper = styled.main`
   max-width: 1000px;
   margin: 0 auto;
   padding: 32px 16px;
-  display: grid;
+  display: flex;
   gap: 16px;
   grid-template-columns: 200px 1fr;
 `;
 
 const Sidebar = styled.nav`
   position: sticky;
+  display: flex;
   top: 32px;
-  height: 25vh;
+  height: 5vh;
 `;
 
 export default CommodityList;

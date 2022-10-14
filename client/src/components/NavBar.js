@@ -17,6 +17,12 @@ function NavBar({ user, setUser }) {
       <Logo>
         <Link to="/">DEINAUCTION</Link>
       </Logo>
+      {/* <NavLink
+      to ="/"
+      className="navlink"
+      >
+     HOME
+</NavLink> */}
       <Nav>
         <Button as={Link} to="/new">
           New Commodity

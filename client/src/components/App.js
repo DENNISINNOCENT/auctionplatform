@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
-import CommodityCard from "../pages/CommodityCard";
+// import CommodityCard from "../pages/CommodityCard";
 import CommodityForm from "../pages/CommodityForm"
+import CommodityList from "../pages/CommodityList";
 // import BidderForm from "../pages/BidderForm";
 
 
@@ -30,11 +31,12 @@ function App() {
             <CommodityForm user={user} />
           </Route>
           <Route path="/">
-            <CommodityCard />
+            <CommodityList />
           </Route>
         </Switch>
       </main>
     {/* <CommodityCard/> */}
+    {/* <CommodityList/> */}
     {/* <CommodityForm/>
     <BidderForm/> */}
       

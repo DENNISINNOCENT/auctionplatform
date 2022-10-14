@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import React from "react";
 function CategoryFilter({ categories, selectedCategory, setSelectedCategory }) {
   return (
     <CategoryList role="menu">
@@ -21,11 +21,12 @@ const CategoryList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
 `;
 
 const CategoryItem = styled.li`
   border-bottom: 1px solid gray;
-  padding: 8px;
+  padding: 5px;
   ${(p) =>
     p.active &&
     `
