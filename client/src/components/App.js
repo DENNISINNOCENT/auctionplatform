@@ -33,6 +33,9 @@ function App() {
           <Route path="/">
             <CommodityList />
           </Route>
+          <Route path ="/home">
+            
+          </Route>
         </Switch>
       </main>
     {/* <CommodityCard/> */}

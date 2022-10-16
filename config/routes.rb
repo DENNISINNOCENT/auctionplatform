@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # resources :commodities, only:[:index,:create,:destroy,:show]
+  resources :commodities, only:[:index,:create,:destroy,:show]
   resources :bidders, only:[:index,:create,:update,:destroy,:show]
-  resources :users, only: [:index, :show, :create, :update, :destroy]
+  # resources :users, only: [:index, :show, :create, :update, :destroy]
  post "/signup", to: "users#create"
  get "/me", to: "users#show"
  post "/login", to: "sessions#create"

@@ -19,10 +19,13 @@ function CommodityCard({image_url,name,category,description,bid_price}) {
         
         <p>{description}</p>
         <h1>Bidding Price ${bid_price}</h1>
+         <h1>Highest Bidprice${bid_price}</h1>
       </Detail>
       <FormField>
-        <Button type="submit">Place Bid</Button>
+        <Button type="submit">Place Bid</Button>   <Button type="submit">Bidders</Button>
+       
       </FormField>
+       
     </Wrapper>
     </div>
   );

@@ -1,4 +1,6 @@
 class CommoditiesController < ApplicationController
+    #  before_action :authorize
+    #  skip_before_action :index
     def index
     commodities = Commodity.all
     render json: commodities
@@ -14,7 +16,7 @@ class CommoditiesController < ApplicationController
     end
 
     def destroy
-    commodity = find_by
+    commodity = find_commodity
     commodity.destroy
     head :no_content
     end
@@ -26,4 +28,7 @@ class CommoditiesController < ApplicationController
     def find_commodity
         Commodity.find(params[:id])
     end
+    def authorize
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+  end
 end
