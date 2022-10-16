@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+   namespace :api do
   resources :commodities, only:[:index,:create,:destroy,:show]
   resources :bidders, only:[:index,:create,:update,:destroy,:show]
   # resources :users, only: [:index, :show, :create, :update, :destroy]
